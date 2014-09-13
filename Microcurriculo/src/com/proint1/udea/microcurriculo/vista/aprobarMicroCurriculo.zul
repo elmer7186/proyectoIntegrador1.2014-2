@@ -1,0 +1,45 @@
+<?page title="Aprobar Micro Curriculo" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="lang" ?>
+<window title="Aprobar Micro Curriculo" border="normal" apply="${aprobarMicroCurriculoCtl}">
+	
+	<listbox id="lbxEstadoMicroCurriculo" mold="paging" pageSize="10" rows="3" onClick="lblnbEstIdn.value = self.selectedItem.label">
+		<listhead>
+			<listheader label="${labels.microcurriculo.estado.id}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.usuario}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.fecha}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.estado}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.observaciones}"></listheader>
+
+                		<?listheader label="${labels.microcurriculo.microcurriculo.id}" width="80px"></listheader>
+                		<listheader label="${labels.microcurriculo.microcurriculo.estadomic}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.usuario}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.fecha}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.requisitos}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.correquisito}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.justificacion}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.justificacion}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.objetivogeneral}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.microcurriculo.objetivosespecificos}" width="80px"></listheader>
+	            		<listheader label="Estado" width="80px"></listheader?>
+	     </listhead>
+	</listbox>
+	<grid>
+        <auxhead>
+            <auxheader colspan="4" label="APROBAR MICRO CURRICULO" align="center" />
+        </auxhead>
+        <columns>
+            <column hflex="5" align="center">Codigo del micro curriculo a aprobar</column>
+            <column hflex="6" align="center">Fecha para cambiarla al estado al micro curriculo seleccionado</column>
+        </columns>
+        <rows sclass="narrow">
+            <row align="center">
+                <label id="lblnbEstIdn" value="Seleccione una fila..." />
+                <textbox id="txtdtAdtfecha" value="yyyy-mm-dd" />
+            </row>
+        </rows>
+    </grid>
+    <div align="center">
+        <button id="btnAprobar" label="Aprobar Micro Curriculo" />
+    </div>
+</window>

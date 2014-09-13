@@ -1,0 +1,47 @@
+<?page title="Crear Reporte Por Estado" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Crear Reporte Por Estado" border="normal" apply="${crearReporteXEstadoCtl}">
+	<listbox id="lbxMicroCurriculo" mold="paging" pageSize="10" rows="3" onClick="lblnbEstIdn.value = self.selectedItem.label">
+	<listhead>
+            <listheader label="${labels.microcurriculo.microcurriculo.id}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.usuario}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.fecha}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.nombre}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.validable}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.horasteoricasemanales}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.horasterosem}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.numerocreditos}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.horasclasexsemestre}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.campodeformacion}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.habilitable}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.clasificable}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.requisitos}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.correquisito}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.program}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.proposito}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.justificacion}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.objetivogeneral}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.objetivosespecificos}"></listheader>
+	        <listheader label="${labels.microcurriculo.microcurriculo.contenidoresumido}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.estadomic}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.bibliografia}"></listheader>
+            <listheader label="${labels.microcurriculo.microcurriculo.unidades}"></listheader>
+       </listhead>
+	</listbox>
+	<grid>
+        <auxhead>
+            <auxheader colspan="4" label="CREACION DE REPORTES POR ESTADO" align="center" />
+        </auxhead>
+        <columns>
+            <column hflex="5" align="center">Codigo del estado del micro curriculo a consultar</column>
+            <column hflex="6" align="center">Presione el boton para crear el reporte del estado del micro curriculo ingresado</column>
+        </columns>
+        <rows sclass="narrow">
+            <row>
+                <label id="lblnbEstIdn" value="Seleccione un micro curriculo" />
+            	<button id="btnReporte" label="Generar reporte" />
+            </row>
+        </rows>
+    </grid>
+</window>
+</zk>

@@ -1,0 +1,24 @@
+<?page title="Crear usuario" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Crear usuario" border="normal">
+	<grid>
+        <auxhead>
+            <auxheader colspan="4" label="INGRESO DE LOS USUARIOS" align="center" />
+        </auxhead>
+        <columns>
+            <column hflex="5">Nombre de los campos</column>
+            <column hflex="6">Ingreso de los datos</column>
+        </columns>
+        <rows sclass="narrow">
+            <row>
+                <label value="Nombre" />
+                <textbox id="nombre" />
+            </row>
+            <row>
+                <label value="Apellido" />
+                <textbox id="apellido" />
+            </row>
+        </rows>
+    </grid>
+</window>
+</zk>

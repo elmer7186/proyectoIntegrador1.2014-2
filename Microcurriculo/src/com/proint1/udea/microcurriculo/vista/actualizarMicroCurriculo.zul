@@ -1,0 +1,43 @@
+<?page title="Actualizar Micro Curriculo" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Actualizar Micro Curriculo" border="normal" apply="${actualizarMicroCurriculoCtl}">
+	<listbox id="lbxEstadoMicroCurriculo" mold="paging" pageSize="10" rows="3" onClick="lblnbEstIdn.value = self.selectedItem.label">
+		<listhead>
+			<listheader label="${labels.microcurriculo.estado.id}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.usuario}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.fecha}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.estado}"></listheader>
+			<listheader label="${labels.microcurriculo.estado.observaciones}"></listheader>
+		</listhead>
+	</listbox>
+	<grid>
+        <auxhead>
+            <auxheader colspan="4" label="ACTUALIZAR MICRO CURRICULO" align="center" />
+        </auxhead>
+        <columns>
+            <column hflex="5" align="center">El Id escogido es:  "<label id="lblnbEstIdn" value="Ninguno"/>", el estado seleccionado es: "<label id="lblnbMicEstado" value="Ninguno"/>"</column>
+            <column hflex="6" align="center">Ingrese la nueva fecha</column>
+        </columns>
+        <rows sclass="narrow">
+            <row align="center">
+            	<radiogroup onCheck="lblnbMicEstado.value = self.selectedItem.label">
+            		<grid xmlns:ca="client/attribute" ca:data-scrollable="false">
+	            		<rows>
+							<row>
+								<radio label="Aprobado" />
+								<radio label="Inaprobado" />
+								<radio label="Devuelto" />
+							</row>
+						</rows>
+					</grid>
+            	</radiogroup>
+            	<textbox id="txtdtAdtfecha" value="yyyy-mm-dd" />
+                <?textbox id="txtnbMicIdn" /?>
+            </row>
+        </rows>
+    </grid>
+    <div align="center">
+    	<button id="btnActualizar" label="Actualizar Micro Curriculo" />
+    </div>
+</window>
+</zk>

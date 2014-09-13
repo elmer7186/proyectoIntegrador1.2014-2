@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.utility"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="LIBRERIAS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="var" path="LIBhibernate3"/>
+	<classpathentry kind="var" path="LIBlog4j-1.2.15"/>
+	<classpathentry kind="var" path="LIBslf4j-api.jar"/>
+	<classpathentry kind="var" path="LIBspring"/>
+	<classpathentry kind="var" path="LIBzcommon"/>
+	<classpathentry kind="var" path="LIBzel"/>
+	<classpathentry kind="var" path="LIBzhtml"/>
+	<classpathentry kind="var" path="LIBzk"/>
+	<classpathentry kind="var" path="LIBzkbind"/>
+	<classpathentry kind="var" path="LIBzkplus"/>
+	<classpathentry kind="var" path="LIBzul"/>
+	<classpathentry kind="var" path="LIBzweb"/>
+	<classpathentry kind="var" path="ASPECTJRT_LIB"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Dominio"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JasperLibs"/>
+	<classpathentry kind="var" path="DIGESTER"/>
+	<classpathentry kind="var" path="GROOVY"/>
+	<classpathentry kind="var" path="ITEXT"/>
+	<classpathentry kind="var" path="JASPER1"/>
+	<classpathentry kind="var" path="JASPER2"/>
+	<classpathentry kind="var" path="JASPER3"/>
+	<classpathentry kind="var" path="JAVAFLOW"/>
+	<classpathentry kind="var" path="LOGGIN"/>
+	<classpathentry kind="var" path="PNG-ENC"/>
+	<classpathentry kind="var" path="POI"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

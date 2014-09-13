@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+
+<!-- BEANS DE ACCESO A DATOS, DAO -->
+
+<!--     <bean id="" class=""> -->
+<!-- 		<property name="sessionFactory"> -->
+<!-- 			<ref bean="factory"  /> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	<bean id="microCurriculoDAO" class="com.proint1.udea.microcurriculo.dao.MicroCurriculoDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+
+	<bean id="actaDAO" class="com.proint1.udea.microcurriculo.dao.ActaDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+	
+	<bean id="estadoDAO" class="com.proint1.udea.microcurriculo.dao.EstadoDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+	
+	<bean id="evaluacionDAO" class="com.proint1.udea.microcurriculo.dao.EvaluacionDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+	
+	<bean id="nucleoAcademicoDAO" class="com.proint1.udea.microcurriculo.dao.NucleoAcademicoDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+	
+	<bean id="unidadesDAO" class="com.proint1.udea.microcurriculo.dao.UnidadesDAO">
+		<property name="sessionFactory">
+			<ref bean="factory" />
+		</property>
+	</bean>
+	
+	<!-- BEANS DE NEGOCIO -->	
+
+<!--     <bean id="c" class=""> -->
+<!-- 	    <property name="ALGUN_DAO" ref="ALGUN_DAO"></property> -->
+<!-- 	</bean> -->
+	<bean id="microCurriculoInt" class="com.proint1.udea.microcurriculo.ngc.MicroCurriculoNgc">
+	    <property name="microCurriculoDAO" ref="microCurriculoDAO"></property>
+	</bean>
+	
+	<bean id="actaInt" class="com.proint1.udea.microcurriculo.ngc.ActaNgc">
+	    <property name="actaDAO" ref="actaDAO"></property>
+	</bean>
+	
+	<bean id="estadoInt" class="com.proint1.udea.microcurriculo.ngc.EstadoNgc">
+	    <property name="estadoDAO" ref="estadoDAO"></property>
+	</bean>
+	
+	<bean id="evaluacionInt" class="com.proint1.udea.microcurriculo.ngc.EvaluacionNgc">
+	    <property name="evaluacionDAO" ref="evaluacionDAO"></property>
+	</bean>
+	
+	<bean id="nucleoAcademicoInt" class="com.proint1.udea.microcurriculo.ngc.NucleoAcademicoNgc">
+	    <property name="nucleoAcademicoDAO" ref="nucleoAcademicoDAO"></property>
+	</bean>
+	
+	<bean id="unidadesInt" class="com.proint1.udea.microcurriculo.ngc.UnidadesNgc">
+	    <property name="unidadesDAO" ref="unidadesDAO"></property>
+	</bean>
+	
+<!-- BEANS PARA LOS CONTROLADORES -->		
+
+<!-- 	<bean id="" class="" scope="prototype">  -->
+<!--  		<property name="ALGUN_NEGOCIO" ref="ALGUN_NEGOCIO"></property>     -->
+<!-- 	</bean>   -->
+	<bean id="crearMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.CrearMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+ 		<property name="actaInt" ref="actaInt"></property>    
+ 		<property name="estadoInt" ref="estadoInt"></property>    
+	</bean>
+	
+	<bean id="aprobarMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.AprobarMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+ 		<property name="estadoInt" ref="estadoInt"></property>
+	</bean>
+	
+	<bean id="devolverMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.DevolverMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+ 		<property name="estadoInt" ref="estadoInt"></property>
+	</bean>
+	
+	<bean id="duplicarMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.DuplicarMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+ 		<property name="estadoInt" ref="estadoInt"></property>
+	</bean>
+	
+	<bean id="actualizarMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.ActualizarMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+ 		<property name="estadoInt" ref="estadoInt"></property>
+	</bean>
+	
+	<bean id="crearReporteXEstadoCtl" class="com.proint1.udea.microcurriculo.ctl.CrearReporteXEstadoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+	</bean>
+	
+	<bean id="crearReporteXNucleoCtl" class="com.proint1.udea.microcurriculo.ctl.CrearReporteXNucleoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+	</bean>
+	
+	<bean id="crearReporteMicroCurriculoCtl" class="com.proint1.udea.microcurriculo.ctl.CrearReporteMicroCurriculoCtl" scope="prototype"> 
+ 		<property name="microCurriculoInt" ref="microCurriculoInt"></property>
+	</bean>
+	
+	
+	<bean id="principalCtl" class="com.proint1.udea.ctl.PrincipalCtl" scope="prototype">
+	</bean>
+	
+	<bean id="menuPrincipalHorCtl" class="com.proint1.udea.ctl.MenuPrincipalHorCtl" scope="prototype">
+	</bean>
+
+
+</beans>

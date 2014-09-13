@@ -1,0 +1,6 @@
+<?page title="Modificar Usuario" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Modificar Usuario" border="normal">
+New Content Here!
+</window>
+</zk>

@@ -1,0 +1,158 @@
+
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="lang" ?>
+<window title="Crear Micro Curriculo" border="normal" apply="${crearMicroCurriculoCtl}">
+	<div style="overflow: auto;" height="500px">
+	<grid>
+        <auxhead>
+            <auxheader colspan="4" label="INGRESO DE MICRO CURRICULOS" align="center" />
+        </auxhead>
+        <columns>
+            <column hflex="5">Nombre de los campos</column>
+            <column hflex="6">Ingreso de los datos</column>
+        </columns>
+        <rows sclass="narrow">
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.id}" />
+                <label id="lblnbMicIdn" />
+            </row>
+            <row align="center">
+            	<label id="lbltbMicActa" value="Por favor, seleccione un acta de la parte derecha..." />
+                <listbox id="listActas" mold="paging" pageSize="10" rows="3" onClick="lbltbMicActa.value = self.selectedItem.label">
+                	<listhead>
+                		<listheader label="${labels.microcurriculo.acta.idn}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.usuario}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.fecha}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.contenido}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.asistentes}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.ordendeldia}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.desarrollo}" width="80px"></listheader>
+	            		<listheader label="${labels.microcurriculo.acta.firmas}" width="80px"></listheader>
+	        		</listhead>
+                </listbox>
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.usuario}" />
+                <textbox id="txtvrAdtusuario" value="usuario" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.fecha}" />
+                <textbox id="txtdtAdtfecha" value="1984-12-22" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.nombre}" />
+                <textbox id="txtvrMicNombre" value="nombre" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.validable}" />
+                <textbox id="txtvrMicValidable" value="si/no" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.horasteoricasemanales}" />
+                <textbox id="txtnbMicHorasteoricasemanales" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.horasterosem}" />
+                <textbox id="txtnbMicHorasterosem" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.numerocreditos}" />
+                <textbox id="txtnbMicNumerocreditos" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.horasclasexsemestre}" />
+                <textbox id="txtnbHorasclasexsemestre" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.campodeformacion}" />
+                <textbox id="txtvrMicCampodeformacion" value="campo" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.habilitable}" />
+                <textbox id="txtvrMicHabilitable" value="si/no" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.clasificable}" />
+                <textbox id="txtvrMicClasificable" value="si/no" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.requisitos}" />
+                <textbox id="txtvrMicRequisitos" value="requisitos" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.correquisito}" />
+                <textbox id="txtvrMicCorrequisito" value="correquisitos" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.program}" />
+                <textbox id="txtnbMicProgram" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.proposito}" />
+                <textbox id="txtvrMicProposito" value="proposito" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.justificacion}" />
+                <textbox id="txtvrMicJustificacion" value="justificacion" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.objetivogeneral}" />
+                <textbox id="txtvrMicObjetivogeneral" value="objetivo gral" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.objetivosespecificos}" />
+                <textbox id="txtvrMicObjetivosespecificos" value="objetivo esp" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.contenidoresumido}" />
+                <textbox id="txtvrMicContenidoresumido" value="contenido resumido" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.estadomic}" />
+                <?textbox id="txtnbMicEstado" value="1" /?>
+                
+                <radiogroup onCheck="lblnbMicEstado.value = self.selectedItem.label">
+					<grid xmlns:ca="client/attribute" ca:data-scrollable="false">
+						<rows>
+							<row>
+							Su seleccion ha sido:  <label id="lblnbMicEstado" value="Ninguna"/>
+							</row>
+							<row>
+								<radio label="Aprobado" />
+								<radio label="Inaprobado" />
+								<radio label="Devuelto" />
+							</row>
+							<row>
+							</row>
+						</rows>
+					</grid>
+				</radiogroup>
+                
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.bibliografia}" />
+                <textbox id="txtvrMicBibliografia" value="bibliografia" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.unidades}" />
+                <textbox id="txttbMicUnidades" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.evaluacion}" />
+                <textbox id="txttbMicEvaluacion" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.nucleoacademico}" />
+                <textbox id="txttbMicNucleoacademico" value="1" />
+            </row>
+            <row>
+                <label value="${labels.microcurriculo.microcurriculo.semestrexcurso}" />
+                <textbox id="txttbAdmSemestrexcurso" value="1" />
+            </row>
+        </rows>
+    </grid>
+    <div align="center">
+    	<button id="btnCrear" label="Crear Micro Curriculo" />
+    </div>
+    </div>
+</window>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="microCurriculoXNucleoRpt" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="54245e29-df52-4474-b50b-50adffb90f39">
+	<property name="template.type" value="columnar"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="idNucleoParam" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+      TB_MIC_MICROCURRICULO."NB_MIC_IDN" AS TB_MIC_MICROCURRICULO_NB_MIC_I,
+     TB_MIC_MICROCURRICULO."VR_ADTUSUARIO" AS TB_MIC_MICROCURRICULO_VR_ADTUS,
+     TB_MIC_MICROCURRICULO."DT_ADTFECHA" AS TB_MIC_MICROCURRICULO_DT_ADTFE,
+     TB_MIC_MICROCURRICULO."VR_MIC_NOMBRE" AS TB_MIC_MICROCURRICULO_VR_MIC_N,
+     TB_MIC_MICROCURRICULO."VR_MIC_VALIDABLE" AS TB_MIC_MICROCURRICULO_VR_MIC_V,
+     TB_MIC_MICROCURRICULO."NB_MIC_HORASTEORICASEMANALES" AS TB_MIC_MICROCURRICULO_NB_MIC_H,
+     TB_MIC_MICROCURRICULO."NB_MIC_HORASTEROSEM" AS TB_MIC_MICROCURRICULO_NB_MC_HT,
+     TB_MIC_MICROCURRICULO."NB_MIC_NUMEROCREDITOS" AS TB_MIC_MICROCURRICULO_NB_MIC_N,
+     TB_MIC_MICROCURRICULO."NB_HORASCLASEXSEMESTRE" AS TB_MIC_MICROCURRICULO_NB_HORAS,
+     TB_MIC_MICROCURRICULO."VR_MIC_CAMPODEFORMACION" AS TB_MIC_MICROCURRICULO_VR_MIC_C,
+     TB_MIC_MICROCURRICULO."NB_SCU_IDN" AS TB_MIC_MICROCURRICULO_NB_SCU_I,
+     TB_MIC_MICROCURRICULO."NB_ACT_IDN" AS TB_MIC_MICROCURRICULO_NB_ACT_I,
+     TB_MIC_MICROCURRICULO."NB_NAC_IDN" AS TB_MIC_MICROCURRICULO_NB_NAC_I,
+     TB_MIC_MICROCURRICULO."VR_MIC_HABILITABLE" AS TB_MIC_MICROCURRICULO_VR_MIC_H,
+     TB_MIC_MICROCURRICULO."VR_MIC_CLASIFICABLE" AS TB_MIC_MICROCURRICULO_VR_MIC_C,
+     TB_MIC_MICROCURRICULO."VR_MIC_REQUISITOS" AS TB_MIC_MICROCURRICULO_VR_MIC_R,
+     TB_MIC_MICROCURRICULO."VR_MIC_CORREQUISITO" AS TB_MIC_MICROCURRICULO_VR_MIC_C,
+     TB_MIC_MICROCURRICULO."NB_MIC_PROGRAM" AS TB_MIC_MICROCURRICULO_NB_MIC_P,
+     TB_MIC_MICROCURRICULO."VR_MIC_PROPOSITO" AS TB_MIC_MICROCURRICULO_VR_MIC_P,
+     TB_MIC_MICROCURRICULO."VR_MIC_JUSTIFICACION" AS TB_MIC_MICROCURRICULO_VR_MIC_J,
+     TB_MIC_MICROCURRICULO."VR_MIC_OBJETIVOGENERAL" AS TB_MIC_MICROCURRICULO_VR_MIC_O,
+     TB_MIC_MICROCURRICULO."VR_MIC_OBJETIVOSESPECIFICOS" AS TB_MIC_MICROCURRICULO_VR_MIC_O,
+     TB_MIC_MICROCURRICULO."VR_MIC_CONTENIDORESUMIDO" AS TB_MIC_MICROCURRICULO_VR_MIC_C,
+     TB_MIC_MICROCURRICULO."NB_MIC_UNIDAD" AS TB_MIC_MICROCURRICULO_NB_MIC_U,
+     TB_MIC_MICROCURRICULO."VR_MIC_BIBLIOGRAFIA" AS TB_MIC_MICROCURRICULO_VR_MIC_B,
+     TB_MIC_ESTADOMIC."VR_EST_NOMBREEST" AS TB_MIC_ESTADOMIC_VR_EST_NOMBRE,
+     TB_MIC_ESTADOMIC."VR_EST_OBSERVACIONES" AS TB_MIC_ESTADOMIC_VR_EST_OBSERV
+FROM
+     "PROINT1"."TB_MIC_ESTADOMIC" TB_MIC_ESTADOMIC INNER JOIN "PROINT1"."TB_MIC_MICROCURRICULO" TB_MIC_MICROCURRICULO ON TB_MIC_ESTADOMIC."NB_EST_IDN" = TB_MIC_MICROCURRICULO."NB_MIC_IDN"
+WHERE
+     TB_MIC_MICROCURRICULO.NB_NAC_IDN LIKE $P{idNucleoParam}]]>
+	</queryString>
+	<field name="TB_MIC_MICROCURRICULO_NB_MIC_I" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_ADTUS" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_DT_ADTFE" class="java.sql.Timestamp"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_N" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_V" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_MIC_H" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_MC_HT" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_MIC_N" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_HORAS" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_C" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_SCU_I" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_ACT_I" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_NAC_I" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_H" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_R" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_MIC_P" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_P" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_J" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_O" class="java.lang.String"/>
+	<field name="TB_MIC_MICROCURRICULO_NB_MIC_U" class="java.math.BigDecimal"/>
+	<field name="TB_MIC_MICROCURRICULO_VR_MIC_B" class="java.lang.String"/>
+	<field name="TB_MIC_ESTADOMIC_VR_EST_NOMBRE" class="java.lang.String"/>
+	<field name="TB_MIC_ESTADOMIC_VR_EST_OBSERV" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="120" y="10" width="435" height="93" uuid="3ca981f0-5f56-4091-8a62-cdc22253b668"/>
+				<textElement>
+					<font size="80" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="336" y="103" width="217" height="29" uuid="3ad4c9df-d1dc-4716-9470-1b39ddccc689"/>
+				<textElement>
+					<font size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Micro Curriculo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="10" width="107" height="122" uuid="840f1b69-a623-43e6-8219-d686a3bec761"/>
+				<imageExpression><![CDATA["udea.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="605" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="2" y="6" width="551" height="1" uuid="9ae67d21-40fc-4a59-b3a5-602261b38259"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="12" width="132" height="20" forecolor="#000000" uuid="2abcb280-52c9-40b3-bb8f-57944833855f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="12" width="338" height="18" uuid="053fedae-f401-4bda-bb4f-4f4525971048"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MIC_I}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="32" width="132" height="20" forecolor="#000000" uuid="a612a84a-4b7b-4ba6-b459-c85c357852e4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="32" width="338" height="18" uuid="e06be27c-5109-4a6d-bcbf-5633dedbf6b9"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_ADTUS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="52" width="132" height="20" forecolor="#000000" uuid="1188e418-525b-45e7-85ad-d4997267cad7"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="52" width="338" height="18" uuid="91a95340-2fd3-49d5-97d9-f6cfbca13701"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_DT_ADTFE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="72" width="132" height="20" forecolor="#000000" uuid="4d022217-ec98-4c3a-a099-f65ef9803ac3"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="72" width="338" height="18" uuid="d35f0234-919f-4102-bb4d-bee6a94f5ef8"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_N}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="92" width="132" height="20" forecolor="#000000" uuid="b5b5a53e-93f1-41ca-88da-0fc650408bff"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Validable]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="92" width="338" height="18" uuid="c3b40c72-78dc-4474-b012-7d9a7abf54c5"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_V}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="112" width="132" height="20" forecolor="#000000" uuid="068726fa-dbb7-41a1-a4c0-131d06389efa"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horas teoricas semana]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="112" width="338" height="18" uuid="63b2dd63-c135-4514-acdb-48f26d4968a9"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MIC_H}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="154" width="132" height="20" forecolor="#000000" uuid="d14d2575-ff9a-4214-b9bc-476eb95928d8"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Numero de creditos]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="154" width="338" height="18" uuid="492253ba-6c3f-4f1b-909b-5d2217aa31df"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MIC_N}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="174" width="132" height="20" forecolor="#000000" uuid="511b41c9-8dfc-40d4-8ea9-3cc24cf29505"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horas clase x semestre]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="174" width="338" height="18" uuid="68a02fb0-5765-480e-a1fa-28475cee59aa"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_HORAS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="194" width="132" height="20" forecolor="#000000" uuid="b08f5086-19b2-426e-a07a-ef97a19a022c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Campo de formacion]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="194" width="338" height="18" uuid="6a8160f1-abb5-460d-ab4a-fc403dd6c9fa"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_C}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="214" width="132" height="20" forecolor="#000000" uuid="0ce6ed0b-04e9-424d-a098-d03006a42da6"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Id semestre x curso]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="214" width="338" height="18" uuid="a09722af-56bf-4835-bfd7-57367d860dca"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_SCU_I}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="234" width="132" height="20" forecolor="#000000" uuid="dad5a0b6-7141-436a-8a72-c34bd970018c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Id acta]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="234" width="338" height="18" uuid="ca533145-6de0-48c7-b2a4-d56bcabb7824"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_ACT_I}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="254" width="132" height="20" forecolor="#000000" uuid="f6814327-5b47-4796-8559-e45960d645e4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Codigo nucleo]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="254" width="338" height="18" uuid="fa1e6e94-b581-41ac-84c2-f2d978162648"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_NAC_I}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="274" width="132" height="20" forecolor="#000000" uuid="f02dcb7f-a5de-4a02-9bd2-26a0254b9a8c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Habilitable]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="274" width="338" height="18" uuid="ce7eb3d9-6b6e-47bd-9ebd-b78cb7179ad8"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_H}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="294" width="132" height="20" forecolor="#000000" uuid="bab33a1d-0c28-46be-ac39-5f2affe4a09e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Requisitos]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="294" width="338" height="18" uuid="e1a01e41-14ec-4635-ad98-9ac883b18690"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_R}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="314" width="132" height="20" forecolor="#000000" uuid="738c940f-84be-4803-8835-2ac62fbc416f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Programa]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="314" width="338" height="18" uuid="f3a14786-0fbf-462c-8409-0a8b9f790fe2"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MIC_P}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="334" width="132" height="20" forecolor="#000000" uuid="3b6834ed-234d-4995-a5d3-d628db42c1c2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Proposito]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="334" width="338" height="18" uuid="3268b07e-c4a3-4c19-b494-2feed1a39d6e"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_P}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="354" width="132" height="20" forecolor="#000000" uuid="88a23164-30c3-46ac-98e7-3e68ed7523f5"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Justificacion]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="354" width="338" height="18" uuid="cff64186-5ccc-4b12-9422-7e6bac1f8c26"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_J}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="374" width="132" height="20" forecolor="#000000" uuid="b7579a56-08ad-4ead-807f-246eca6fcdd5"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Objetivo general]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="374" width="338" height="18" uuid="717a3717-165b-42d6-9819-aa0b92f545d2"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_O}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="394" width="132" height="20" forecolor="#000000" uuid="568c97ea-5d82-4f5f-8c65-740f9f7e2223"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Unidad]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="394" width="338" height="18" uuid="625a6314-d021-4a05-9773-950c3cb2fd94"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MIC_U}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="414" width="132" height="20" forecolor="#000000" uuid="88ae64d7-bcc5-4f46-82d5-cdb43ef1ae3b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Bibliografia]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="414" width="338" height="18" uuid="51112971-84bd-408c-ac46-c5b12ac38b21"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_VR_MIC_B}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="434" width="132" height="20" forecolor="#000000" uuid="485fdc19-bde7-44cf-9cdb-31c0a022016d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="434" width="338" height="18" uuid="d0d3e27f-88bd-4532-8101-b2a7f2e12328"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_ESTADOMIC_VR_EST_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="454" width="132" height="20" forecolor="#000000" uuid="db3d1f42-3126-4c46-999b-97587b19f4d2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Observaciones]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="454" width="338" height="18" uuid="f140c1aa-deb4-4700-b1f6-19a997bcab59"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_ESTADOMIC_VR_EST_OBSERV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="79" y="132" width="132" height="20" forecolor="#000000" uuid="27fae038-5a03-44d9-98fb-b5dfd942f34c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Horas teoricas semest]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="215" y="134" width="338" height="18" uuid="578e9aca-ff29-48ff-8556-ec76d125e956"/>
+				<textElement>
+					<font size="14" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TB_MIC_MICROCURRICULO_NB_MC_HT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="ca87484f-9496-40bd-a928-2ecbdcd12838"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#9DB1B8" uuid="243fbd36-463c-4475-b91a-7d08af5dd426"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="-1" width="40" height="13" forecolor="#FFFFFF" uuid="0e604328-3a55-445e-a4e0-d44bc236fe0a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="-1" width="80" height="13" forecolor="#FFFFFF" uuid="ef0665cd-d03c-44f1-8567-934e6cc7053a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="0" width="197" height="13" forecolor="#FFFFFF" uuid="60a2aca4-9342-498f-a755-935b57ca50d3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
