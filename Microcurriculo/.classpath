@@ -12,32 +12,48 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="LIBRERIAS"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="var" path="LIBhibernate3"/>
-	<classpathentry kind="var" path="LIBlog4j-1.2.15"/>
-	<classpathentry kind="var" path="LIBslf4j-api.jar"/>
-	<classpathentry kind="var" path="LIBspring"/>
-	<classpathentry kind="var" path="LIBzcommon"/>
-	<classpathentry kind="var" path="LIBzel"/>
-	<classpathentry kind="var" path="LIBzhtml"/>
-	<classpathentry kind="var" path="LIBzk"/>
-	<classpathentry kind="var" path="LIBzkbind"/>
-	<classpathentry kind="var" path="LIBzkplus"/>
-	<classpathentry kind="var" path="LIBzul"/>
-	<classpathentry kind="var" path="LIBzweb"/>
-	<classpathentry kind="var" path="ASPECTJRT_LIB"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Dominio"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JasperLibs"/>
-	<classpathentry kind="var" path="DIGESTER"/>
-	<classpathentry kind="var" path="GROOVY"/>
-	<classpathentry kind="var" path="ITEXT"/>
-	<classpathentry kind="var" path="JASPER1"/>
-	<classpathentry kind="var" path="JASPER2"/>
-	<classpathentry kind="var" path="JASPER3"/>
-	<classpathentry kind="var" path="JAVAFLOW"/>
-	<classpathentry kind="var" path="LOGGIN"/>
-	<classpathentry kind="var" path="PNG-ENC"/>
-	<classpathentry kind="var" path="POI"/>
+	<classpathentry kind="var" path="LIBRERIAS/antlr-2.7.6.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/bsh.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-codec.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-dbcp-1.2.2.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-digester-2.1.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-fileupload.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-io.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-logging.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/commons-pool-1.4.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/dom4j-1.6.1.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/flashchart.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/hibernate3.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/iText-2.1.7.js2.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/jasperreports-5.6.0.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/jasperreports-fonts-5.6.0.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/jasperreports-javaflow-5.6.0.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/javassist.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/jta.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/log4j-1.2.15.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/ojdbc14.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/png-encoder-1.5.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/poi-3.7-20101029.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/sapphire.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/silvertail.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/slf4j-api.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/slf4j-jdk14.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/spring.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zcommon.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zel.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zhtml.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zk.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zkbind.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zkplus.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zul.jar"/>
+	<classpathentry kind="var" path="LIBRERIAS/zweb.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

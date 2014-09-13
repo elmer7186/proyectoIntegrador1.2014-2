@@ -13,14 +13,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="var" path="ASPECTJRT_LIB"/>
 	<classpathentry kind="var" path="LIBRERIAS"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Actividad"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Administracion"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Dominio"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Microcurriculo"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Produccion"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JasperLibs"/>
-	<classpathentry kind="var" path="JASPER1"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
